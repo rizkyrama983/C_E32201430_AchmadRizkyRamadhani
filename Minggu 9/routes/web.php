@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
 
@@ -39,4 +39,15 @@ Route::group(['middleware' => ['web','auth']], function() {
         {
             Route::resource('dashboard', 'DashboardController');
         });
+}); */
+
+Route::group(['middleware' => ['web','auth']], function () 
+{
+    Route::group(['namespace' => 'Backend'], function()
+    {
+        Route::resource('dashboard', 'DashboardController');
+        Route::resource('pendidikan', 'PendidikanController');
+    });
 });
+Auth::routes();
+Route::resource('pendidikan', 'pendidikanController');

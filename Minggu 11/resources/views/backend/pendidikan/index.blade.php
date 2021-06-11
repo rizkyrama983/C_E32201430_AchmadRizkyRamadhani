@@ -66,7 +66,7 @@
                                 <td>{{$item->tahun_keluar}}<td>
                                 <td>
                                 <div class="btn-group">
-                                    <a class="btn btn-warning" href="">
+                                    <a class="btn btn-warning" href="{{ route('pendidikan.edit',$item->id) }}">
                                         <i class="fa fa-edit"></i></a>
                                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
                                     </from>
